@@ -1,1 +1,16 @@
-
+# if north is blocked, stop and turn west (state 3)
+0 n*** -> x 3
+# if north is open, go north and turn east (state 1)
+0 x*** -> n 1
+# if east is blocked, stop and turn north (state 0)
+1 *e** -> x 0
+# if east is open, go east and turn south (state 2)
+1 *x** -> e 2
+# if south is open, go south and turn west (state 3)
+2 ***x -> s 3
+# if south is blocked, stop and turn east (state 1)
+2 ***s -> x 1
+# if west is open, go west and turn north (state 0)
+3 **x* -> w 0
+# if west is blocked, stop and turn south (state 2)
+3 **w* -> x 2
